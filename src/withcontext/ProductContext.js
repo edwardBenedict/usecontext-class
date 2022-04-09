@@ -11,17 +11,17 @@ const initialProducts = [
 export const ProductProvider = (props) => {
   const [products, setProducts] = useState(initialProducts);
 
-  const increasePrice = (event) => {
-    console.log("increasePrice", event.target.id);
+  const increasePrice = (id) => {
+    console.log("increasePrice", id);
     const newProducts = [...products];
-    newProducts[event.target.id].price += 1;
+    newProducts[id].price += 1;
     setProducts(newProducts);
   };
 
-  const decreasePrice = (event) => {
+  const decreasePrice = (id) => {
     console.log("decreasePrice");
     const newProducts = [...products];
-    newProducts[event.target.id].price -= 1;
+    newProducts[id].price -= 1;
     setProducts(newProducts);
   };
 
