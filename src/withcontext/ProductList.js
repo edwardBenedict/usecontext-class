@@ -2,9 +2,15 @@ import React from "react";
 import Product from "./Product";
 
 const ProductList = () => {
+  const { products } = useContext(ProductContext);
   return (
     <div>
-      <Product />
+       {products.map((product) => (
+        <Product
+          key={product.id}
+          product={product}
+        />
+      ))}
     </div>
   );
 };
